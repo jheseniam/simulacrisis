@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SimulaCrisis — Simulador Web de Abastecimiento y Economía Familiar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">SimulaCrisis</span>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio">Inicio</a>
+        <a href="#contexto">Contexto</a>
+        <a href="#simulador">Simulador</a>
+        <a href="#resultados">Resultados</a>
+        <a href="#casos">Casos de Estudio</a>
+        <a href="#conclusiones">Conclusiones</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="inicio" class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <div class="hero-badge">Proyecto Web</div>
+        <h1 class="hero-title">
+          Simulador de<br />
+          <span class="highlight">Abastecimiento</span><br />
+          y Economía Familiar
+        </h1>
+        <p class="hero-desc">
+          Una herramienta educativa e interactiva que modela situaciones reales 
+          de crisis: precios, carburantes, transporte y presupuesto familiar — 
+          con matemáticas simples y resultados visuales claros.
+        </p>
+        <div class="hero-chips">
+          <span class="chip">🛢️ Carburantes</span>
+          <span class="chip">🛒 Precios</span>
+          <span class="chip">🚌 Transporte</span>
+          <span class="chip">👨‍👩‍👧 Familia</span>
+          <span class="chip">📦 Escasez</span>
+          <span class="chip">💸 Poder Adquisitivo</span>
+        </div>
+        <a href="#simulador" class="btn-primary">Ir al Simulador ↓</a>
+      </div>
+      <div class="hero-scroll-hint">scroll</div>
+    </section>
+    <section id="contexto" class="section-context">
+      <div class="container">
+        <div class="section-label">Contexto</div>
+        <h2 class="section-title">¿Por qué este simulador?</h2>
+        <div class="context-grid">
+          <article class="context-card">
+            <div class="ctx-icon">🛢️</div>
+            <h3>Carburantes</h3>
+            <p>Las estaciones de servicio enfrentan reservas limitadas. 
+               El consumo diario supera el reabastecimiento, generando escasez progresiva.</p>
+               <img src="falta de combustible.jpeg" alt="Carburantes" class="ctx-img" />
+          </article>
+          <article class="context-card">
+            <div class="ctx-icon">📈</div>
+            <h3>Inflación de precios</h3>
+            <p>Los productos de la canasta básica incrementan su precio semana a semana, 
+               reduciendo el poder de compra de las familias.</p>
+            <img src="precios elevados.jpeg" alt="Inflación de precios" class="ctx-img" />
+          </article>
+          <article class="context-card">
+            <div class="ctx-icon">🚧</div>
+            <h3>Bloqueos y desvíos</h3>
+            <p>Los bloqueos obligan a rutas más largas, encareciendo el transporte 
+               de personas y mercancías.</p>
+            <img src="bloqueos.jpeg" alt="Bloqueos y desvíos" class="ctx-img" />
+          </article>
+          <article class="context-card">
+            <div class="ctx-icon">😰</div>
+            <h3>Pánico y rumores</h3>
+            <p>Los rumores de escasez generan compras masivas que vacían el stock 
+               disponible más rápido de lo normal.</p>
+            <img src="largas filas.jpeg" alt="Pánico y rumores" class="ctx-img" />
+          </article>
+          <article class="context-card">
+            <div class="ctx-icon">👨‍👩‍👧</div>
+            <h3>Presupuesto familiar</h3>
+            <p>Las familias deben priorizar gastos con presupuestos fijos que ya 
+               no alcanzan para cubrir la canasta básica.</p>
+            <img src="presupuesto familiar.jpg" alt="Presupuesto familiar" class="ctx-img" />
+          </article>
+          <article class="context-card">
+            <div class="ctx-icon">💸</div>
+            <h3>Poder adquisitivo</h3>
+            <p>El ingreso permanece estático mientras los gastos crecen, 
+               reduciendo progresivamente lo que una familia puede comprar.</p>
+            <img src="dinero.webp" alt="Poder adquisitivo" class="ctx-img" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="simulador" class="section-simulator">
+      <div class="container">
+        <div class="section-label">Simulador</div>
+        <h2 class="section-title">Elige un escenario</h2>
+        <p class="section-sub">Selecciona el modelo que deseas simular, ingresa los datos y obtén resultados al instante.</p>
+
+        <div class="scenario-tabs" role="tablist">
+          <button class="tab-btn active" data-tab="A" role="tab">🛢️ Carburante</button>
+          <button class="tab-btn" data-tab="B" role="tab">🛒 Precios</button>
+          <button class="tab-btn" data-tab="C" role="tab">🚌 Transporte</button>
+          <button class="tab-btn" data-tab="D" role="tab">👨‍👩‍👧 Compras</button>
+          <button class="tab-btn" data-tab="E" role="tab">📦 Escasez</button>
+          <button class="tab-btn" data-tab="F" role="tab">💸 Poder Adquis.</button>
+        </div>
+
+        <div class="sim-panel active" id="tab-A">
+          <div class="sim-card">
+            <h3 class="sim-card-title">🛢️ Simulador de Abastecimiento de Carburantes</h3>
+            <p class="sim-card-desc">Calcula cuántos días durará la reserva de una estación de servicio según el consumo diario.</p>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="a-reserva">Reserva inicial (litros)</label>
+                <input type="number" id="a-reserva" placeholder="Ej: 10000" min="0" />
+              </div>
+              <div class="form-group">
+                <label for="a-consumo">Consumo diario (litros)</label>
+                <input type="number" id="a-consumo" placeholder="Ej: 1200" min="0" />
+              </div>
+              <div class="form-group">
+                <label for="a-reabastecimiento">Reabastecimiento diario (litros)</label>
+                <input type="number" id="a-reabastecimiento" placeholder="Ej: 300" min="0" />
+              </div>
+              <div class="form-group">
+                <label for="a-critico">Nivel crítico (litros)</label>
+                <input type="number" id="a-critico" placeholder="Ej: 2000" min="0" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-calc" onclick="calcularA()">Calcular</button>
+              <button class="btn-reset" onclick="resetForm('A')">Limpiar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-panel" id="tab-B">
+          <div class="sim-card">
+            <h3 class="sim-card-title">🛒 Simulador de Precios de Alimentos</h3>
+            <p class="sim-card-desc">Calcula cuánto más gasta una familia debido al aumento de precios en la canasta básica.</p>
+            <div id="b-productos-container">
+              <div class="producto-row" data-idx="0">
+                <div class="form-grid four-col">
+                  <div class="form-group">
+                    <label>Producto</label>
+                    <input type="text" class="b-nombre" placeholder="Ej: Arroz" />
+                  </div>
+                  <div class="form-group">
+                    <label>Precio anterior (Bs)</label>
+                    <input type="number" class="b-anterior" placeholder="Ej: 8" min="0" step="0.01" />
+                  </div>
+                  <div class="form-group">
+                    <label>Precio actual (Bs)</label>
+                    <input type="number" class="b-actual" placeholder="Ej: 11" min="0" step="0.01" />
+                  </div>
+                  <div class="form-group">
+                    <label>Cantidad mensual</label>
+                    <input type="number" class="b-cantidad" placeholder="Ej: 10" min="0" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn-add" onclick="agregarProducto()">+ Agregar producto</button>
+            <div class="form-actions">
+              <button class="btn-calc" onclick="calcularB()">Calcular</button>
+              <button class="btn-reset" onclick="resetForm('B')">Limpiar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-panel" id="tab-C">
+          <div class="sim-card">
+            <h3 class="sim-card-title">🚌 Simulador de Costo de Transporte</h3>
+            <p class="sim-card-desc">Estima cuánto aumenta el gasto de transporte por bloqueos o desvíos.</p>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="c-normal">Distancia normal (km)</label>
+                <input type="number" id="c-normal" placeholder="Ej: 10" min="0" step="0.1" />
+              </div>
+              <div class="form-group">
+                <label for="c-desvio">Distancia con desvío (km)</label>
+                <input type="number" id="c-desvio" placeholder="Ej: 16" min="0" step="0.1" />
+              </div>
+              <div class="form-group">
+                <label for="c-costo-km">Costo por kilómetro (Bs)</label>
+                <input type="number" id="c-costo-km" placeholder="Ej: 2" min="0" step="0.01" />
+              </div>
+              <div class="form-group">
+                <label for="c-viajes">Viajes por semana</label>
+                <input type="number" id="c-viajes" placeholder="Ej: 5" min="0" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-calc" onclick="calcularC()">Calcular</button>
+              <button class="btn-reset" onclick="resetForm('C')">Limpiar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-panel" id="tab-D">
+          <div class="sim-card">
+            <h3 class="sim-card-title">👨‍👩‍👧 Simulador de Compras Familiares</h3>
+            <p class="sim-card-desc">Verifica si el presupuesto familiar alcanza para cubrir la compra de alimentos básicos.</p>
+            <div class="form-group" style="max-width:300px">
+              <label for="d-presupuesto">Presupuesto disponible (Bs)</label>
+              <input type="number" id="d-presupuesto" placeholder="Ej: 500" min="0" step="0.01" />
+            </div>
+            <div id="d-items-container">
+              <div class="producto-row">
+                <div class="form-grid three-col">
+                  <div class="form-group">
+                    <label>Producto</label>
+                    <input type="text" class="d-nombre" placeholder="Ej: Arroz" />
+                  </div>
+                  <div class="form-group">
+                    <label>Precio (Bs)</label>
+                    <input type="number" class="d-precio" placeholder="Ej: 12" min="0" step="0.01" />
+                  </div>
+                  <div class="form-group">
+                    <label>Cantidad</label>
+                    <input type="number" class="d-cantidad" placeholder="Ej: 3" min="0" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn-add" onclick="agregarItemD()">+ Agregar ítem</button>
+            <div class="form-actions">
+              <button class="btn-calc" onclick="calcularD()">Calcular</button>
+              <button class="btn-reset" onclick="resetForm('D')">Limpiar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-panel" id="tab-E">
+          <div class="sim-card">
+            <h3 class="sim-card-title">📦 Simulador de Rumor de Escasez</h3>
+            <p class="sim-card-desc">Simula cómo los rumores disparan la demanda y agotan el stock disponible.</p>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="e-demanda">Demanda normal (unidades)</label>
+                <input type="number" id="e-demanda" placeholder="Ej: 100" min="0" />
+              </div>
+              <div class="form-group">
+                <label for="e-porcentaje">Aumento por rumor (%)</label>
+                <input type="number" id="e-porcentaje" placeholder="Ej: 40" min="0" max="1000" />
+              </div>
+              <div class="form-group">
+                <label for="e-stock">Stock disponible (unidades)</label>
+                <input type="number" id="e-stock" placeholder="Ej: 120" min="0" />
+              </div>
+              <div class="form-group">
+                <label for="e-personas">Número de personas/familias</label>
+                <input type="number" id="e-personas" placeholder="Ej: 50" min="0" />
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn-calc" onclick="calcularE()">Calcular</button>
+              <button class="btn-reset" onclick="resetForm('E')">Limpiar</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sim-panel" id="tab-F">
+          <div class="sim-card">
+            <h3 class="sim-card-title">💸 Simulador de Pérdida del Poder Adquisitivo</h3>
+            <p class="sim-card-desc">Calcula cuánto poder de compra pierde una familia cuando los precios suben y el salario se mantiene igual.</p>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="f-ingreso">Ingreso familiar mensual (Bs)</label>
+                <input type="number" id="f-ingreso" placeholder="Ej: 3000" min="0" step="0.01" />
+              </div>
+              <div class="form-group">
+                <label for="f-gasto-anterior">Gasto mensual anterior (Bs)</label>
+                <input type="number" id="f-gasto-anterior" placeholder="Ej: 2200" min="0" step="0.01" />
+              </div>
+              <div class="form-group">
+                <label for="f-gasto-actual">Gasto mensual actual (Bs)</label>
+                <input type="number" id="f-gasto-actual" placeholder="Ej: 2800" min="0" step="0.01" />
+              </div>
+            </div>
+            <div id="f-productos-container">
+              <h4 class="sub-label">Productos de referencia (opcional)</h4>
+              <div class="producto-row">
+                <div class="form-grid four-col">
+                  <div class="form-group">
+                    <label>Producto</label>
+                    <input type="text" class="f-nombre" placeholder="Ej: Aceite" />
+                  </div>
+                  <div class="form-group">
+                    <label>Precio anterior (Bs)</label>
+                    <input type="number" class="f-pant" placeholder="Ej: 12" min="0" step="0.01" />
+                  </div>
+                  <div class="form-group">
+                    <label>Precio actual (Bs)</label>
+                    <input type="number" class="f-pact" placeholder="Ej: 18" min="0" step="0.01" />
+                  </div>
+                  <div class="form-group">
+                    <label>Cantidad mensual</label>
+                    <input type="number" class="f-cant" placeholder="Ej: 4" min="0" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn-add" onclick="agregarProductoF()">+ Agregar producto</button>
+            <div class="form-actions">
+              <button class="btn-calc" onclick="calcularF()">Calcular</button>
+              <button class="btn-reset" onclick="resetForm('F')">Limpiar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultados" class="section-results">
+      <div class="container">
+        <div class="section-label">Resultados</div>
+        <h2 class="section-title">Análisis generado</h2>
+        <div id="resultados-area" class="results-area">
+          <div class="results-placeholder">
+            <span class="placeholder-icon">📊</span>
+            <p>Los resultados aparecerán aquí después de calcular un escenario.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="casos" class="section-cases">
+      <div class="container">
+        <div class="section-label">Casos de Estudio</div>
+        <h2 class="section-title">Casos de estudio para probar</h2>
+        <p class="section-sub">Haz clic en "Probar" para cargar los datos del caso directamente en el simulador.</p>
+        <div class="cases-grid">
+
+          <article class="case-card">
+            <div class="case-num">01</div>
+            <h3>Reserva de Carburante</h3>
+            <table class="case-table">
+              <tr><th>Dato</th><th>Valor</th></tr>
+              <tr><td>Reserva inicial</td><td>10,000 litros</td></tr>
+              <tr><td>Consumo diario</td><td>1,200 litros</td></tr>
+              <tr><td>Reabastecimiento</td><td>300 litros/día</td></tr>
+              <tr><td>Nivel crítico</td><td>2,000 litros</td></tr>
+            </table>
+            <p class="case-expected">✅ La reserva llegará al nivel crítico en aproximadamente <strong>8.9 días</strong>.</p>
+            <button class="btn-case" onclick="cargarCaso1()">Probar este caso →</button>
+          </article>
+
+          <article class="case-card">
+            <div class="case-num">02</div>
+            <h3>Aumento de Precios de Alimentos</h3>
+            <table class="case-table">
+              <tr><th>Producto</th><th>Antes</th><th>Ahora</th><th>Cant.</th></tr>
+              <tr><td>Arroz</td><td>8 Bs</td><td>11 Bs</td><td>10 u.</td></tr>
+              <tr><td>Papa</td><td>7 Bs</td><td>10 Bs</td><td>8 u.</td></tr>
+              <tr><td>Aceite</td><td>12 Bs</td><td>18 Bs</td><td>4 u.</td></tr>
+            </table>
+            <p class="case-expected">✅ Gasto anterior: <strong>206 Bs</strong> → Actual: <strong>302 Bs</strong> (+96 Bs)</p>
+            <button class="btn-case" onclick="cargarCaso2()">Probar este caso →</button>
+          </article>
+
+          <article class="case-card">
+            <div class="case-num">03</div>
+            <h3>Transporte con Desvío</h3>
+            <table class="case-table">
+              <tr><th>Dato</th><th>Valor</th></tr>
+              <tr><td>Distancia normal</td><td>10 km</td></tr>
+              <tr><td>Distancia con desvío</td><td>16 km</td></tr>
+              <tr><td>Costo por km</td><td>2 Bs</td></tr>
+              <tr><td>Viajes por semana</td><td>5</td></tr>
+            </table>
+            <p class="case-expected">✅ Gasto adicional semanal: <strong>60 Bs</strong> (mensual: 240 Bs)</p>
+            <button class="btn-case" onclick="cargarCaso3()">Probar este caso →</button>
+          </article>
+
+          <article class="case-card">
+            <div class="case-num">04</div>
+            <h3>Presupuesto Familiar</h3>
+            <table class="case-table">
+              <tr><th>Dato</th><th>Valor</th></tr>
+              <tr><td>Presupuesto</td><td>500 Bs</td></tr>
+              <tr><td>Total de compra</td><td>580 Bs</td></tr>
+            </table>
+            <p class="case-expected">✅ El presupuesto <strong>no alcanza</strong>. Faltan <strong>80 Bs</strong>.</p>
+            <button class="btn-case" onclick="cargarCaso4()">Probar este caso →</button>
+          </article>
+
+          <article class="case-card">
+            <div class="case-num">05</div>
+            <h3>Rumor de Escasez</h3>
+            <table class="case-table">
+              <tr><th>Dato</th><th>Valor</th></tr>
+              <tr><td>Demanda normal</td><td>100 unidades</td></tr>
+              <tr><td>Aumento por rumor</td><td>40%</td></tr>
+              <tr><td>Stock disponible</td><td>120 unidades</td></tr>
+            </table>
+            <p class="case-expected">✅ Nueva demanda: <strong>140 unidades</strong>. Stock <strong>insuficiente</strong> (falta 20 u.).</p>
+            <button class="btn-case" onclick="cargarCaso5()">Probar este caso →</button>
+          </article>
+
+          <article class="case-card">
+            <div class="case-num">06</div>
+            <h3>Pérdida del Poder Adquisitivo</h3>
+            <table class="case-table">
+              <tr><th>Dato</th><th>Valor</th></tr>
+              <tr><td>Ingreso mensual</td><td>3,000 Bs</td></tr>
+              <tr><td>Gasto anterior</td><td>2,200 Bs</td></tr>
+              <tr><td>Gasto actual</td><td>2,800 Bs</td></tr>
+            </table>
+            <p class="case-expected">✅ Pérdida de poder adquisitivo: <strong>27.3%</strong>. Saldo libre: 200 Bs.</p>
+            <button class="btn-case" onclick="cargarCaso6()">Probar este caso →</button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="conclusiones" class="section-conclusions">
+      <div class="container">
+        <div class="section-label">Conclusiones</div>
+        <h2 class="section-title">Lo que aprendemos</h2>
+        <div class="conclusions-grid">
+          <article class="conclusion-card">
+            <div class="concl-num">01</div>
+            <h3>El modelado matemático simplifica la realidad</h3>
+            <p>Incluso con operaciones básicas —sumas, restas y porcentajes— se pueden representar 
+               fenómenos económicos complejos de forma comprensible para cualquier persona.</p>
+          </article>
+          <article class="conclusion-card">
+            <div class="concl-num">02</div>
+            <h3>La visualización cambia la percepción</h3>
+            <p>Ver los resultados en colores (verde/amarillo/rojo) ayuda a entender la gravedad 
+               de una situación de un vistazo, sin necesidad de interpretar números crudos.</p>
+          </article>
+          <article class="conclusion-card">
+            <div class="concl-num">03</div>
+            <h3>La tecnología web es accesible y potente</h3>
+            <p>Con HTML5, CSS y JavaScript puro —sin frameworks externos— es posible construir 
+               aplicaciones funcionales, responsivas y útiles para la comunidad.</p>
+          </article>
+          <article class="conclusion-card">
+            <div class="concl-num">04</div>
+            <h3>La escasez es un fenómeno sistémico</h3>
+            <p>Los simuladores demuestran que la escasez no surge de un solo factor: 
+               el consumo, el stock, la demanda y los precios interactúan y se retroalimentan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">SimulaCrisis</span>
+      </div>
+      <div class="footer-info">
+        <p><strong>Materia:</strong> Programación Web I</p>
+        <p><strong>Tecnologías:</strong> HTML5 · CSS3 · JavaScript · DOM · Git</p>
+      </div>
+      <div class="footer-credits">
+        <p>Desarrollado con fines educativos.</p>
+        <p class="footer-copy">© 2026 — SimulaCrisis</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
